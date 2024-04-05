@@ -1,0 +1,14 @@
+.header-container {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img {
+    max-height: 100%;
+    max-width: 40vh;
+}

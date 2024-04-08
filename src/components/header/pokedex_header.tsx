@@ -6,7 +6,7 @@ function PokedexHeader() {
 		<>
             <div className="header-container">
                 <div className='header'>
-                    <img src="/pokemon.svg" alt="Pokemon"></img>
+                    <img src="src/assets/pokemon.svg" alt="Pokemon"></img>
                 </div>
             </div>
 		</>

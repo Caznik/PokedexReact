@@ -10,5 +10,6 @@
 
 .header img {
     max-height: 100%;
-    max-width: 40vh;
+    max-width: 35vh;
+    margin-bottom: 2%;
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import PokedexHeader from '../header/pokedex_header'
+import PokedexHeader from '../pokedex_header/pokedex_header'
 import './pokedex.css'
+import PokedexBody from '../pokedex_body/pokedex_body';
 
 function Pokedex() {
 	// States
@@ -51,22 +52,15 @@ function Pokedex() {
         }
 	}, [pokemonList]);
 
-
-	// DOM functions
-	const arrayDataItems = pokemonListDetails.map((pokemonData) => <li key={pokemonData.id}>{pokemonData.name}</li>);
-
 	return (
 		<>
 			<div className="container">
 				<PokedexHeader />
-
-				<div>
-					<ul>{arrayDataItems}</ul>
-				</div>
+				<PokedexBody listOfItems={pokemonListDetails} />
 			</div>
 			
 		</>
 	)
 }
 
-export default Pokedex
+export default Pokedex;

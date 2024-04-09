@@ -1,4 +1,6 @@
 .body-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    grid-gap: 10px; /* Espacio entre las tarjetas */
     width: 100%;
 }

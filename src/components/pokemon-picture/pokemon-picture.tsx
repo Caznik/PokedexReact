@@ -6,8 +6,8 @@ function PokemonPicture(props: any) {
 
     return(
         <>
-            <div>
-                <img src={sprite} alt={name}></img>
+            <div className='sprite-container'>
+                <img src={sprite} alt={name} className='sprite'></img>
             </div>
         </>
     )

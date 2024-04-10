@@ -12,19 +12,20 @@ function Pokedex() {
 	const [page, setPage] = useState<number>(0);
 
 	// Variables and constants
-	//let page = 0;
+	const maxPokemonId = 1025;
 	const limit: number = 20;
 	
 	// Business Functions
 	const loadPage = async() => {
-		console.log(page)
-
 		try {
-            const offset = page * limit;
-            const data = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
+            let offset = page * limit;
+			let pageLimit = ((limit + offset) < maxPokemonId) ? limit : (maxPokemonId - offset)
+
+            const data = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${pageLimit}`)
                 .then((response) => response.json());
 
-			setTotalPokemonCount(data.count);
+			const total = Math.min(data.count, maxPokemonId); // Limit total count
+			setTotalPokemonCount(total);
             setPokemonList(data.results);
             setPokemonListDetails([]); // Clear the details list when changing page
         } catch (error) {
@@ -64,7 +65,7 @@ function Pokedex() {
 				<PokedexHeader />
 				<PokedexBody listOfItems={pokemonListDetails} />
 				
-				<Pagination totalItems={totalPokemonCount} itemsPerPage={limit} onPageChange={setPage} />
+				<Pagination currentPage={page} totalItems={totalPokemonCount} itemsPerPage={limit} onPageChange={setPage} />
 			</div>
 			
 		</>

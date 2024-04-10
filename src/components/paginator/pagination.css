@@ -1,0 +1,22 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    font-size: 1.3em;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    display: flex;
+    place-items: flex-start;
+    margin-left: 10px;
+}
+
+.active {
+    background-color: rgb(117, 232, 255, 0.5);
+    border-radius: 10px;
+}

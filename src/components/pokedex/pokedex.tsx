@@ -1,24 +1,30 @@
 import { useEffect, useState } from 'react';
-import PokedexHeader from '../pokedex_header/pokedex_header'
 import './pokedex.css'
+import PokedexHeader from '../pokedex_header/pokedex_header'
 import PokedexBody from '../pokedex_body/pokedex_body';
+import Pagination from '../paginator/pagination';
 
 function Pokedex() {
 	// States
+	const [totalPokemonCount, setTotalPokemonCount] = useState<number>(0);
 	const [pokemonList, setPokemonList] = useState<any[]>([]);
 	const [pokemonListDetails, setPokemonListDetails] = useState<any[]>([]);
-	const [page, setPage] = useState(0);
+	const [page, setPage] = useState<number>(0);
 
 	// Variables and constants
+	//let page = 0;
 	const limit: number = 20;
 	
 	// Business Functions
 	const loadPage = async() => {
+		console.log(page)
+
 		try {
             const offset = page * limit;
             const data = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
                 .then((response) => response.json());
 
+			setTotalPokemonCount(data.count);
             setPokemonList(data.results);
             setPokemonListDetails([]); // Clear the details list when changing page
         } catch (error) {
@@ -43,7 +49,7 @@ function Pokedex() {
 	// Load first page of pokedex when loading app
 	useEffect(() => {
 		loadPage();
-	}, []);
+	}, [page]);
 
 	// Load the data for the pokemon list requested
 	useEffect(() => {
@@ -57,6 +63,8 @@ function Pokedex() {
 			<div className="container">
 				<PokedexHeader />
 				<PokedexBody listOfItems={pokemonListDetails} />
+				
+				<Pagination totalItems={totalPokemonCount} itemsPerPage={limit} onPageChange={setPage} />
 			</div>
 			
 		</>

@@ -1,31 +1,31 @@
 import './card.css';
 import PokemonPicture from '../pokemon-picture/pokemon-picture';
 import PokemonCardDescription from '../pokemon-card-description/pokemon-card-description';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import PokemonDetail from '../pokemon_detail/pokemon_detail';
 
 function Card(props: any) {
     // Hooks
-    const navigate = useNavigate();
+    const [modalOpen, setModalOpen] = useState(false);
 
     // Props
     const { pokemon } = props;
 
-    // Hook functions
-        // Navigate to pokemon detail
-    const navigateToDetail = () => {
-        navigate(
-            "/pokemon/" + pokemon.id, // Path to navigate
-            {
-                state: { pokemon }
-            }
-        )
-    }
+    const openModal = () => {
+        setModalOpen(true);
+    };
+    
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     return(
         <>
-            <div className='card' onClick={navigateToDetail}>
+            <div className='card' onClick={openModal}>
                 <PokemonPicture sprite={pokemon.sprites.front_default} name={pokemon.name} />
                 <PokemonCardDescription name={pokemon.name} />
+
+                <PokemonDetail isOpen={modalOpen} onClose={closeModal} pokemon={pokemon}/>
             </div>
         </>
     )

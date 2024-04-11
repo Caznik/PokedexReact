@@ -1,0 +1,67 @@
+/* Modal CSS */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal-sprite-container {
+    background-color: red;
+    border-radius: 70px;
+    position: absolute;
+    margin-top: -65vh;
+    height: 15vh;
+    width: 15vh;
+}
+  
+.modal-content {
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 70vh;
+    height: 60vh;
+    max-height: 60vh;
+}  
+
+.modal-pokemon-basic-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-pokemon-name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.modal-pokemon-types-container {
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.type-detail {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 70px;
+    text-shadow: -1.5px 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.modal-separator {
+    margin-top: 5vh;
+}

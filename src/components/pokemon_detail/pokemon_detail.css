@@ -16,7 +16,7 @@
     background-color: red;
     border-radius: 70px;
     position: absolute;
-    margin-top: -65vh;
+    margin-top: -75vh;
     height: 15vh;
     width: 15vh;
 }
@@ -27,8 +27,8 @@
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     width: 70vh;
-    height: 60vh;
-    max-height: 60vh;
+    height: 70vh;
+    max-height: 70vh;
 }  
 
 .modal-pokemon-basic-info {

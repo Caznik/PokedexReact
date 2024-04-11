@@ -2,7 +2,6 @@ import './tabs.css';
 import { useState } from "react";
 
 function Tabs(props: any) {
-
     // Deconstruct props
     const { tabs } = props
 
@@ -13,7 +12,7 @@ function Tabs(props: any) {
             <div className="tab-buttons">
                 {
                     tabs.map((tab: any, index: number) => (
-                        <button key={index} className={index === activeTab ? 'active' : ''} onClick={() => setActiveTab(index)}>
+                        <button key={index} className={`tab-button ${index === activeTab ? 'active' : ''}`} onClick={() => setActiveTab(index)}>
                             {tab.title}
                         </button>
                     ))

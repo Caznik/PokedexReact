@@ -3,6 +3,7 @@ import '../../theme.css';
 import { useEffect, useState } from 'react';
 import PokemonPicture from '../pokemon-picture/pokemon-picture';
 import Tabs from '../tabs/tabs';
+import PokemonStats from '../pokemon-stats/pokemon-stats';
 
 function PokemonDetail(props: any) {
 
@@ -32,7 +33,7 @@ function PokemonDetail(props: any) {
 
     // Tabs
     const tabs = [
-        { title: 'Tab 1', content: <div>Content for Tab 1</div> },
+        { title: 'Stats', content: <PokemonStats stats={pokemon.stats}/> },
         { title: 'Tab 2', content: <div>Content for Tab 2</div> },
         { title: 'Tab 3', content: <div>Content for Tab 3</div> }
       ];

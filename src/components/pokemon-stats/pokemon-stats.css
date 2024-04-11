@@ -1,0 +1,9 @@
+.stats {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 5 columnas */
+    grid-gap: 10px; /* Espacio entre las tarjetas */
+    width: 98%;
+    border: 1px dotted;
+    padding: 10px 0px 10px 10px;
+}

@@ -6,4 +6,24 @@
 .tab-buttons {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 0.766px; /* Espacio para el borde inferior */
+    border-bottom: 1px solid rgba(122, 122, 122, 0.9);
+}
+
+.tab-button {
+    position: relative;
+    padding: 10px 15px;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+}
+
+.active {
+    color: rgba(83, 130, 145, 0.9);
+    background-color: white !important;
+    font-weight: bold;
+}
+
+.tab-content {
+    margin-top: 3%;
 }

@@ -41,8 +41,11 @@ function PokemonDetail(props: any) {
             {isVisible && (
                 <div className="modal-overlay" onClick={handleClose}>
                     <div className='modal-sprite-container'>
-                        <PokemonPicture sprite={pokemon.sprites.front_default} name={pokemon.name} className="pokemon-sprite"/>
-                    </div> 
+                        <div className='pokeball'>
+                            <div className='pokeball-button'></div>
+                            <PokemonPicture sprite={pokemon.sprites.front_default} name={pokemon.name} className="pokemon-sprite"/>
+                        </div> 
+                    </div>
 
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <button className="close-button" onClick={handleClose}>X</button>

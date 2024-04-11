@@ -6,23 +6,21 @@ import Tabs from '../tabs/tabs';
 import PokemonStats from '../pokemon-stats/pokemon-stats';
 
 function PokemonDetail(props: any) {
-
     // Deconstruction props
     const { isOpen, onClose, pokemon } = props;
 
     // States
     const [isVisible, setIsVisible] = useState(isOpen);
-    
+
     useEffect(() => {
-		setIsVisible(isOpen)
-	}, [isOpen]);
+        setIsVisible(isOpen);
+    }, [isOpen]);
 
     // Function to handle closing the modal
     const handleClose = () => {
-        setIsVisible(false);
         onClose(); // Call onClose function passed from parent component
     };
-    
+
     // DOM functions
     const types = pokemon.types.map(
         (type: any) => {
@@ -36,7 +34,7 @@ function PokemonDetail(props: any) {
         { title: 'Stats', content: <PokemonStats stats={pokemon.stats}/> },
         { title: 'Tab 2', content: <div>Content for Tab 2</div> },
         { title: 'Tab 3', content: <div>Content for Tab 3</div> }
-      ];
+    ];
 
     return(
         <>
@@ -47,6 +45,7 @@ function PokemonDetail(props: any) {
                     </div> 
 
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="close-button" onClick={handleClose}>X</button>
                         <div className="modal-pokemon-basic-info">
                             <div className='modal-pokemon-name-container'>
                                 <span>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</span>
@@ -61,7 +60,6 @@ function PokemonDetail(props: any) {
                         <Tabs tabs={tabs} />
 
                     </div>
-
                 </div>
             )}
         </>

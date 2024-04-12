@@ -5,7 +5,7 @@
 
 .tab-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-bottom: 0.766px; /* Espacio para el borde inferior */
     border-bottom: 1px solid rgba(122, 122, 122, 0.9);
 }

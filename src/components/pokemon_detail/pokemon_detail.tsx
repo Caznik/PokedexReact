@@ -33,8 +33,7 @@ function PokemonDetail(props: any) {
     // Tabs
     const tabs = [
         { title: 'Stats', content: <PokemonStats stats={pokemon.stats}/> },
-        { title: 'Abilities', content: <Abilities abilities={pokemon.abilities} /> },
-        { title: 'Tab 3', content: <div>Content for Tab 3</div> }
+        { title: 'Abilities', content: <Abilities abilities={pokemon.abilities} /> }
     ];
 
     return(

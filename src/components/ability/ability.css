@@ -1,0 +1,16 @@
+.ability-container {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.ability-container:not(:first-of-type) {
+    margin-top: 2%;
+}
+
+.ability-name {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}

@@ -12,12 +12,10 @@ function Card(props: any) {
     const { pokemon } = props;
 
     const openModal = () => {
-        console.log('Opening modal...');
         setModalOpen(true);
     };
     
     const closeModal = () => {
-        console.log('Closing modal...');
         setModalOpen(false);
     };
 

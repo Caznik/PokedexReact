@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import PokemonPicture from '../pokemon-picture/pokemon-picture';
 import Tabs from '../tabs/tabs';
 import PokemonStats from '../pokemon-stats/pokemon-stats';
+import Abilities from '../abilities/abilities';
 
 function PokemonDetail(props: any) {
     // Deconstruction props
@@ -32,7 +33,7 @@ function PokemonDetail(props: any) {
     // Tabs
     const tabs = [
         { title: 'Stats', content: <PokemonStats stats={pokemon.stats}/> },
-        { title: 'Tab 2', content: <div>Content for Tab 2</div> },
+        { title: 'Abilities', content: <Abilities abilities={pokemon.abilities} /> },
         { title: 'Tab 3', content: <div>Content for Tab 3</div> }
     ];
 

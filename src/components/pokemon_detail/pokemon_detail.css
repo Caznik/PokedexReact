@@ -1,3 +1,12 @@
+@keyframes rotateY {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -8,7 +17,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* For fade-in animation */
+    opacity: 0;
+    transition: opacity 0.3s linear;
 }
+
+.modal-overlay:hover {
+    opacity: 1;
+}
+
+.card-detail {
+    animation: rotateY 1s linear;
+}
+
 
 .modal-sprite-container {
     position: absolute;
